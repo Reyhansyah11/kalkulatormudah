@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Music Player</title>
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper">
+            <header>
+                <button class="hdbtn">
+                    <i class='bx bx-left-arrow-alt bx-tada'></i>
+                </button>
+                <h3 class="p-now">Playing Now</h3>
+                <button class="hdbtn">
+                    <i class='bx bx-list-ul bx-tada'></i>
+                </button>
+            </header>
+
+
+            <div class="player">
+                <div class="img-area">
+                    <img src="assets/photo/music-1.png" alt="">
+                </div>
+
+                <div class="detail-music">
+                    <h1 class="name">animation</h1>
+                    <h3 class="artist">coding</h3>
+                </div>
+
+                <div class="audio-area">
+                    <div class="timer-music">
+                        <span class="current-time">0:00</span>
+                        <span class="max-duration">0:00</span>
+                    </div>
+                    <div class="progress-area">
+                        <div class="progress-bar">
+                            <audio id="main-music" src="assets/music/music-1.mp3"></audio>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="controls">
+                    <button class="btnC" id="prev">
+                        <i class='bx bx-skip-previous bx-tada'></i>
+                    </button>
+
+                    <button class="play-pause btnC">
+                        <i class='bx bx-play bx-tada bx-flip-vertical'></i>
+                    </button>
+
+                    <button class="btnC" id="next">
+                        <i class='bx bx-skip-next bx-tada'></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/musik-list.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

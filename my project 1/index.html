@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frame Phone</title>
+    <style>
+        :root {
+
+            /* bg */
+
+            --bg1: linear-gradient(180deg, #22262A 0%, #181A1D 100%);
+            --bg2: linear-gradient(135deg, #2F3439, #1F1D23);
+            --bg3: linear-gradient(135deg, #2C3136, #1D2023);
+            --bg4: linear-gradient(#040404);
+            --bg5: linear-gradient(#181A1D);
+
+            --border1: #22262A;
+            --border2: #1A1D21;
+
+            /* box shadow */
+            --bx-sh1:
+                6px 6px 10px #151618,
+                -6px -6px 10px #2c3136,
+                inset 2px 2px 6px #33353b,
+                inset -3px -3px 6px #151618;
+
+            --bx-sh2:
+                -6px -6px 10px #151618,
+                6px 6px 10px #2c3136,
+                inset 2px 2px 6px #33353b,
+                inset -3px -3px 6px #151618;
+
+            --bx-sh3:
+                6px 6px 10px #151618,
+                -6px -6px 10px #2c3136;
+
+            --bx-sh4:
+                inset 2px 2px 3px -2px rgba(167, 169, 171, 0.322),
+                inset 0px -1px 1px 0px #4a4c4e;
+
+            --bx-sh5:
+                8px 8px 12px #151618,
+                -2px -2px 10px #2c3136,
+                inset 2px 2px 3px #33353b,
+                inset -2px -2px 3px #151618;
+
+            --bx-sh6:
+                10px 10px 12px #151618,
+                -10px -10px 12px #2c3136,
+                inset 4px 4px 8px #33353b,
+                inset -4px -4px 8px #151618;
+
+            --bx-sh7:
+                10px 10px 12px #151618,
+                -10px -10px 12px #2c3136,
+                inset -4px -4px 8px #33353b,
+                inset 4px 4px 8px #151618;
+        }
+
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background: var(--bg1);
+        }
+
+
+        #phone-frame {
+            position: relative;
+            width: 280px;
+            height: 550px;
+            background: var(--bg4);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--bx-sh1);
+        }
+
+        #screen {
+            position: absolute;
+            top: 20px;
+            left: 10px;
+            right: 10px;
+            bottom: 20px;  
+            background-color: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .top-area {
+            height: 7px;
+            width: 30%;
+            margin: 0 auto;
+            margin-top: 10px;
+            border-radius: 50px;
+            background: var(--bg4);
+            box-shadow: var(--bx-sh4);
+        }
+
+        .top-area-1 {
+            height: 7px;
+            width: 3%;
+            margin: 0 auto;
+            position: relative;
+            bottom: 7px;
+            left: 50px;
+            border-radius: 50px;
+            background: var(--bg4);
+            box-shadow: var(--bx-sh4);
+            z-index: 999;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="phone-frame">
+        <div class="top-area">
+            <div class="top-bar"></div>
+        </div>
+        <div class="top-area-1">
+            <div class="top-bar"></div>
+        </div>
+        <div id="screen">
+            <iframe frameborder="0" style="height: 100%; overflow:scroll; width: 100%" src="index2.html" marginheight="1"
+                marginwidth="1" name="cboxmain" id="cboxmain" seamless="seamless" scrolling="no" frameborder="0"
+                allowtransparency="true"></iframe>
+        </div> 
+    </div>
+
+</body>
+
+</html>

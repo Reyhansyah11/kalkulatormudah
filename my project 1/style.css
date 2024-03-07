@@ -1,0 +1,279 @@
+
+:root {
+
+    /* bg */
+
+    --bg1: linear-gradient(180deg, #22262A 0%, #181A1D 100% );
+    --bg2: linear-gradient(135deg, #2F3439, #1F1D23);
+    --bg3: linear-gradient(135deg, #2C3136, #1D2023);
+    --bg4: linear-gradient(#040404);
+    --bg5: linear-gradient(#181A1D);
+
+    --border1: #22262A;
+    --border2: #1A1D21;
+
+    /* box shadow */
+    --bx-sh1: 
+        6px 6px 10px #151618,
+        -6px -6px 10px #2c3136,
+        inset 2px 2px 6px #33353b,
+        inset -3px -3px 6px #151618;
+
+    --bx-sh2: 
+        -6px -6px 10px #151618,
+        6px 6px 10px #2c3136,
+        inset 2px 2px 6px #33353b,
+        inset -3px -3px 6px #151618;
+
+    --bx-sh3: 
+    6px 6px 10px #151618,
+    -6px -6px 10px #2c3136;
+
+    --bx-sh4: 
+        inset 2px 2px 3px -2px rgba(167, 169, 171, 0.322),
+        inset 0px -1px 1px 0px #4a4c4e;
+
+    --bx-sh5: 
+        8px 8px 12px #151618,
+        -2px -2px 10px #2c3136,
+        inset 2px 2px 3px #33353b,
+        inset -2px -2px 3px #151618;
+
+    --bx-sh6: 
+        10px 10px 12px #151618,
+        -10px -10px 12px #2c3136,
+        inset 4px 4px 8px #33353b,
+        inset -4px -4px 8px #151618;
+
+    --bx-sh7: 
+        10px 10px 12px #151618,
+        -10px -10px 12px #2c3136,
+        inset -4px -4px 8px #33353b,
+        inset 4px 4px 8px #151618;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background: #181A1D;
+}
+
+
+/* .container{ 
+    position: relative;
+    margin: 0 auto;
+    max-width: 350px;
+} */
+
+.wrapper {
+    max-width: 900px;
+    text-align: center;
+    padding: 2rem;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+header,
+.timer-music,
+.controls{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+}
+
+header .hdbtn i{
+    font-size: 15px;
+    font-weight: 600;
+}
+
+header .hdbtn{
+    background: var(--bg2);
+    border: 2px solid var(--border1);
+    box-shadow: var(--bx-sh1);
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+    color: #86898c;
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+.hdbtn:active{
+    box-shadow: var(--bx-sh2);
+}
+
+header h3{
+    text-transform: uppercase;
+    font-size: 12px;
+    color: #86898c;
+    margin: 0 20px 0 20px;
+}
+
+.player{
+    margin-top: 0.5rem;
+}
+
+img{
+    width: 12rem;
+    height: 12rem;
+    margin-bottom: 0.5rem;
+    object-fit: cover;
+    border: 10px solid var(--border2);
+    border-radius: 50%;
+    box-shadow: var(--bx-sh3);
+    /* animation: rotation 8s infinite linear;
+    transform-origin: center; */
+}
+
+.name{
+    color: #A7A9AB;
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.artist{
+    color: #7c7d80;
+    font-size: 12px;
+    text-transform: capitalize;
+    padding: 10px 0 5px 0;
+}
+
+.audio-area{
+    margin: 10px 0px 30px 0px;
+}
+
+.timer-music span{
+    font-size: 10px;
+    color: #7c7d80;
+    user-select: none;
+    font-weight: 800;
+}
+
+.progress-area{
+    height: 7px;
+    width: 100%;
+    margin-top: 20px;
+    border-radius: 50px;
+    background: var(--bg4);
+    box-shadow: var(--bx-sh4);
+    cursor: pointer;
+}
+
+.progress-area .progress-bar{
+    height: inherit;
+    width: 0%;
+    position: relative;
+    border-radius: inherit;
+    background: linear-gradient(90deg, #010384 0%, #0a0de1 80%);
+    box-shadow: var(--bx-sh4);
+}
+
+.progress-bar::before{
+    content: "";
+    position: absolute;
+    background: var(--bg2);
+    box-shadow: var(--bx-sh5);
+    border-radius: 50%;
+    top: 50%;
+    right: -14px;
+    z-index: 2;
+    width: 28px;
+    height: 28px;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.progress-bar::after{
+    content: "";
+    position: absolute;
+    background: #0a0de1;
+    border-radius: 50%;
+    top: 50%;
+    right: -5px;
+    z-index: 2;
+    width: 10px;
+    height: 10px;
+    outline: none;
+    border: none;
+    pointer-events: none;
+    transform: translateY(-50%);
+    transition: all 0.2s ease;
+}
+
+.controls{
+    margin: 5px 8px 5px 8px;
+}
+
+.btnC{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 2px solid var(--border2);
+    transition: all 0.2s ease;
+    background: var(--bg3);
+    box-shadow: var(--bx-sh6);
+}
+
+.btnC:active{
+    box-shadow: var(--bx-sh7);
+}
+
+.controls i{
+    font-size: 30px;
+    user-select: none;
+    color: #a7a9a7;
+    display: flex;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.controls .play-pause{
+    width: 50px;
+    height: 50px;
+    display: flex; 
+    margin-left: 20px;
+    margin-right: 20px;
+    cursor: pointer;
+    align-items: center;
+    justify-content: center;
+}
+
+.play-pause{
+    border: 3px solid #0a0de1;
+    background: linear-gradient(135deg, #010384, #0e11f7);
+    box-shadow: 
+        10px 10px 12px #151618,
+        -10px -10px 12px #222529,
+        inset 4px 4px 8px #0a0de1,
+        inset -4px -4px 8px #010384;
+}
+
+.play-pause:active{
+    box-shadow: 
+        10px 10px 12px #151618,
+        -10px -10px 12px #222529,
+        inset 10px 10px 8px #0a0de1,
+        inset -10px -10px 8px #010384;
+}
+
+.rotate{
+    animation: rotation 8s infinite linear;
+    transform-origin: center;
+}
+@keyframes rotation{
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(359deg);
+    }
+}
